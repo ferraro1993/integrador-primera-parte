@@ -64,13 +64,13 @@ app.get("/cart", auth, (req, res) => {
 		res.render("cart", { user: req.session.user.userName });
 	}
 });
-/*
+
 app.get("*", (req, res) => {
 	res.render("info", {
 		layout: "infoPage.hbs",
 		message: "Error:404 Pagina no encontrada. Volver a la pagina principal.",
 	});
-});*/
+});
 
 app.listen(PORT, (err) => {
 	err ? console.log(`Error:${err.code}`) : console.log(`app running on http://localhost:${PORT}`);
