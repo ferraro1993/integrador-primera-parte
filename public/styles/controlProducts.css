@@ -1,0 +1,199 @@
+/*---------------------------------GENERAL---------------------------------*/
+.body-layout {
+	display: grid; /*contenedor grid*/
+	height: 100vh;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto 1fr auto;
+	/*cuadricula 4filas x 1columnas*/
+	grid-template-areas:
+		"header"
+		"nav"
+		"main"
+		"footer";
+}
+/*---------------------------------GENERAL---------------------------------*/
+/*---------------------------------MAIN---------------------------------*/
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 5rem 0;
+}
+section {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+}
+.form {
+	width: 100%;
+	color: black;
+	background-color: grey;
+	box-shadow: 7px 13px 37px black;
+	border-top: 4px solid rgb(12, 161, 166);
+	border-radius: 10px;
+	padding: 20px 30px;
+	margin: 18px;
+}
+.formItem {
+	margin: 1rem 0;
+	border-bottom: 1px solid black;
+}
+.formLayout {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.formControls {
+	display: flex;
+	height: 50px;
+	background-color: silver;
+	border: 1px solid rgb(12, 161, 166);
+	border-radius: 10px;
+	margin: 15px 5px;
+	padding: 11px 10px;
+}
+.formControls:focus-within {
+	box-shadow: 0px 0px 5px 1px blue;
+}
+.formControls input {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color: gray;
+	background-color: silver;
+	border-style: none;
+	outline: 0;
+}
+
+.inputPrice {
+	width: 100px;
+}
+.formControls p {
+	font-size: 10px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color: gray;
+}
+.formControls input:focus-within {
+	color: black;
+}
+.button {
+	width: 100px;
+	height: 50px;
+	color: black;
+	background-color: rgb(12, 161, 166);
+	font-size: 1rem;
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	padding: 15px 5px;
+	margin: 15px 5px;
+}
+.button:hover {
+	box-shadow: 0 0 2px 3px cyan; /*borde con sompra */
+}
+.form h5 {
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+	margin: 0 0 30px 0;
+	border-bottom: 1px solid;
+}
+
+.listForm {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.formLayout img {
+	width: 150px;
+	border: 1px solid rgb(12, 161, 166);
+	background-color: white;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+.formLayout p {
+	font-size: 2rem;
+}
+
+.buttonDelete {
+	color: black;
+	background-color: rgb(131, 22, 22);
+	font-size: 1rem;
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+}
+.buttonDelete:hover {
+	box-shadow: 0 0 2px 3px red;
+}
+/*---------------------------------popup---------------------------------*/
+.btnContainer {
+	display: flex;
+	justify-content: space-between;
+}
+.btn:hover {
+	box-shadow: 0 0 2px 3px cyan;
+}
+.btn {
+	background-color: rgb(12, 161, 166);
+	border: 0;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 10px 25px;
+	margin: 10px 0;
+}
+.popupContainer {
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.3);
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	pointer-events: none;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	transition: opacity 0.3s ease;
+}
+.show {
+	pointer-events: auto;
+	opacity: 1;
+}
+.popup {
+	/*background-color: #fff;*/
+	background-color: silver;
+	width: 300px;
+	max-width: 100%;
+	padding: 20px 40px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+/*---------------------------------popup---------------------------------*/
+/*---------------------------------RESPONSIVE---------------------------------*/
+/*entre 577px y 768px*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+}
+/*menos 576px */
+@media only screen and (max-width: 576px) {
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+	.nav-menu-link {
+		font-size: 14px; /*cambio el tamaño de la fuente*/
+	}
+}
+/*---------------------------------RESPONSIVE---------------------------------*/

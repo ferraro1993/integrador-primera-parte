@@ -1,0 +1,451 @@
+/*---------------------------------GENERAL---------------------------------*/
+* {
+	margin: 0; /*reseteo los margenes*/
+	padding: 0; /*reseteo relleno*/
+	/* hace que el padding y el border pasen a formar parte del 
+	cálculo del ancho de la caja y no lo suman posteriormente.*/
+	box-sizing: border-box;
+}
+
+/*Asegura  que estos elementos se interpreten como elementos Block en todos
+los navegadores (mejora la compatibilidad con navegadores antiguos).
+*/
+header,
+section,
+main,
+footer,
+aside,
+nav,
+article,
+figure,
+figcaption {
+	display: block;
+}
+
+body {
+	font-family: sans-serif, Arial, Helvetica; /*tipos de fuente */
+	background-color: silver; /*color del fondo*/
+}
+.body-layout {
+	display: grid; /*contenedor grid*/
+	grid-template-columns: auto auto;
+
+	/*cuadricula 4filas x 1columnas*/
+	grid-template-areas:
+		"header header"
+		"nav nav"
+		"section aside"
+		"footer footer";
+}
+/*---------------------------------GENERAL---------------------------------*/
+
+/*---------------------------------HEADER---------------------------------*/
+header {
+	grid-area: header; /*Asigno a que área corresponde este elemento*/
+	background-color: rgb(12, 161, 166); /*color del fondo*/
+	display: grid; /*contenedor grid*/
+	grid-template-columns: repeat(3, 1fr); /*creo 3 columnas de 1fr c/u*/
+	row-gap: 1rem; /*espacio entre filas*/
+}
+.header-logo {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.logo-text {
+	font-size: 2em; /*tamaño de la fuetne */
+	font-weight: bolder; /*negrita*/
+}
+.logo-img {
+	width: 130px; /*tamaño de la imagen*/
+}
+.header-container-right {
+	display: flex; /*contenedor flex*/
+	justify-content: space-evenly; /*espacea los elementos manteniendo la misma distancia entre ellos y el margen*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.header-search {
+	display: flex; /*contenedor flex*/
+	align-items: center; /*centro los elementos verticalmente*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+}
+
+.header-search input {
+	width: 400px; /*ancho*/
+	height: 40px; /*alto*/
+	border: 3px solid silver; /*borde de 3px plateado*/
+	border-right: none; /*saco el borde derecho*/
+	font-size: 20px; /*tamaño de la fuente*/
+	border-top-left-radius: 20px; /*hago curvo el borde superior izquierdo */
+	border-bottom-left-radius: 20px; /*hago curvo el inferior  derecho */
+}
+
+.header-search button {
+	width: 50px; /*ancho*/
+	height: 40px; /*alto*/
+	border: 3px solid silver; /*borde de 3px plateado*/
+	border-top-right-radius: 20px; /*hago curvo el borde superior derecho */
+	border-bottom-right-radius: 20px; /*hago curvo el inferior  derecho */
+}
+/*cambia el color al pasar el mouse por el elemento*/
+.header-search button:hover {
+	background-color: cyan; /*color del fondo*/
+}
+
+.header-search img {
+	width: 30px; /*ancho de la imagen*/
+	height: 29px; /*alto de la imagen*/
+}
+
+.header-login {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centro los elementos horizontalmente*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.header-login img {
+	width: 70px; /*tamaño de la imagen*/
+}
+.header-login a {
+	text-decoration: none; /*saco la decoracion por defecto del link (<a>)*/
+	font-size: 20px; /*tamaño de la fuente*/
+	color: black; /*color del texto*/
+}
+
+/*cambia el color al pasar el mouse por el elemento*/
+.header-login a:hover {
+	color: cyan; /*color del texto*/
+}
+
+.header-carrito {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.header-carrito img {
+	width: 70px; /*ancho de la imagen*/
+	border-radius: 50%; /*Curvo los bordes para que quede un círculo*/
+}
+
+.header-carrito :hover {
+	transform: scale(1.2); /*aumenta el tamaño de la imagen*/
+	transition: all 0.4s; /*velocidad del efecto*/
+}
+/*---------------------------------HEADER---------------------------------*/
+/*---------------------------------NAV---------------------------------*/
+nav {
+	grid-area: nav; /*Asigno a que área corresponde este elemento*/
+	background-color: grey; /*rgb(12, 161, 166);*/ /*color del fondo*/
+	margin-bottom: 4rem; /*margen inferior*/
+}
+.nav-menu {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	align-items: center; /*centro los elementos verticalmente*/
+	list-style: none; /*saco la decoracion de la lista (por defeceto te pone unos puntos adelante)*/
+}
+.nav-menu-item {
+	margin: 10px 30px; /*margen de 10px para top y bottom, 5px para left y right*/
+	padding: 5px 5px 5px 5px; /*relleno de 5px para top, bottom, left y right */
+}
+.nav-menu-link {
+	text-decoration: none; /*saco la decoracion del link*/
+	color: black; /* color del texto*/
+	font-size: 18px; /*tamñao de la fuente*/
+	font-family: monospace; /*tipo de fuente*/
+	text-transform: uppercase; /*pasa el texto a mayuscula*/
+	width: max-content; /*ancho maximo disponible*/
+}
+/*cambia el color al pasar el mouse por el elemento*/
+.nav-menu-item:hover {
+	background-color: cyan; /*color de texto*/
+	box-shadow: inset 0 0 1px 1px black;
+	border-radius: 5px; /*curvo los bordes*/
+	cursor: pointer; /*para que aparesca el curso sobre el elemnto*/
+}
+
+/*---------------------------------NAV---------------------------------*/
+/*---------------------------------SECTION---------------------------------*/
+section {
+	grid-area: section; /*Asigno a que área corresponde este elemento*/
+	display: flex; /*contenedor flex*/
+	justify-content: end; /*alineo horizontalmente los elementos al final de su contenedor*/
+	margin-bottom: 2rem; /*margen en las 4 direcciones*/
+}
+.my-section {
+	width: 80%; /*ancho*/
+}
+.gallery {
+	display: flex; /*contenedor flex*/
+	justify-content: space-between; /*lineo horizontalmente los elementos*/
+	flex-wrap: wrap; /*si se desbordan pasan a la fila de abajo*/
+	row-gap: 1rem; /*separacion entre filas*/
+	margin: 0 1rem; /*margin*/
+}
+.gallery-element {
+	width: 150px; /*ancho*/
+	border-radius: 10px; /*Curvo los bordes*/
+	transition: 1s; /*velocidad de la transición*/
+}
+
+/*Aumento el tamaño y le coloco un borde 
+cuando paso sobre el elemento con el mouse*/
+.gallery-element:hover {
+	transform: scale(2.5);
+	border: 1px solid black;
+}
+
+.container-general-information {
+	display: flex; /*contenedor flex*/
+	flex-direction: column; /*alineo los elementos en columna(se invierten los ejes x e y)*/
+	align-items: center; /*centro los elementos horizontalmente*/
+	background-color: white; /*color de fondo*/
+	border-radius: 10px; /*curvo los bordes*/
+	margin: 1rem; /*margen en las 4 direcciones*/
+}
+.container-general-information h2,
+h6 {
+	font-size: 2rem; /*tamaño de la fuente*/
+	font-family: monospace; /*tipo de fuente*/
+	text-transform: uppercase; /*paso el texto a mayuscula*/
+	text-decoration: underline; /*subrayado*/
+	margin: 2rem 1rem 1rem 1rem; /*margen en las 4 direcciones*/
+}
+
+.container-description-text {
+	max-width: 60ch; /*numero de maximo de caracteres por linea*/
+	font-size: 1.2rem; /*tamaño de la fuente*/
+	font-family: monospace; /*tipo de fuente*/
+	text-align: justify; /*justifico el texto*/
+	line-height: 1.6; /*Interlineado*/
+	margin: 0rem 1rem 2rem 1rem; /*margen en las 4 direcciones*/
+}
+
+table {
+	width: 80%; /*ancho*/
+	font-family: monospace, sans-serif; /*tipo de fuente*/
+	border-collapse: collapse; /*hace que los bordes se junten*/
+}
+
+td,
+th {
+	border: 2px solid #dddddd; /*borde de 2 pixeles de grosor*/
+	text-align: left; /*alineo el texto a la izquierda*/
+	padding: 8px; /*relleno en las 4 direcciones*/
+}
+/*alterno el color de fondo de la tabla*/
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+/*---------------------------------SECTION---------------------------------*/
+
+/*---------------------------------ASIDE---------------------------------*/
+aside {
+	grid-area: aside; /*Asigno a que área corresponde este elemento*/
+}
+.my-aside {
+	width: 400px; /*ancho*/
+	border: 1px solid black; /*borde 1 pixel negro*/
+	background-color: white; /*color de fondo*/
+	border-radius: 5px; /*curvo el borde*/
+	/*el elemento siempre se mantendra en pantalla a una 
+	cierta distancia del top de la pantalla*/
+	position: sticky;
+	top: 10%;
+}
+.my-aside h5 {
+	font-family: Arial, Helvetica, sans-serif; /*tipo de fuente*/
+	font-size: 2rem; /*tamaño de la fuente*/
+	margin: 1rem 1rem 0.5rem 1rem; /*margen en las 4 direcciones*/
+}
+.code {
+	font-size: 12px; /*tamaño de la fuente*/
+	font-style: italic; /*cursiva*/
+	margin: 0 1rem 1rem 1rem; /*margen en las 4 direcciones*/
+}
+.price {
+	font-size: 2rem; /*tamaño de la fuente*/
+	font-style: italic; /*cursiva*/
+	font-weight: bolder; /*negrita*/
+	color: rgb(12, 161, 166); /*color del texto*/
+	margin: 0 1rem 1rem 1rem; /*margen en las 4 direcciones*/
+}
+.mini-description {
+	font-size: 1rem; /*tamaño de la fuente*/
+	margin: 0 1rem 1rem 1rem; /*margen en las 4 direcciones*/
+}
+
+.btn-buy {
+	width: 350px; /*ancho*/
+	height: 40px; /*alto*/
+	margin: 1rem; /*margen en las 4 direcciones*/
+	font-size: 1.3rem; /*tamaño de la fuente*/
+	font-weight: bold; /*negrita*/
+	border: none; /*saco los bordes*/
+	border-radius: 10px; /*curvo el borde*/
+	cursor: pointer; /*cuando pasa sobre el elemento cambia el cursor*/
+	color: white; /*color del texto*/
+	background-color: rgb(89, 89, 89); /*color del fondo*/
+}
+
+.btn-buy:hover {
+	color: rgb(12, 161, 166); /*color del texto*/
+	box-shadow: 5px 5px 20px rgb(12, 161, 166); /*sombreado*/
+}
+.info-send {
+	display: flex; /*contenedor flex*/
+	align-items: center; /*centro los elementos verticalmente*/
+	border-top: 1px solid black; /*borde superior negro*/
+	margin: 0 1rem 1rem 1rem; /*margen en las 4 direcciones*/
+}
+.info-send img {
+	width: 100px; /*tamaño de la imagen*/
+}
+/*---------------------------------ASIDE---------------------------------*/
+
+/*---------------------------------FOOTER----------------------------------*/
+footer {
+	grid-area: footer; /*Asigno a que área corresponde este elemento*/
+}
+
+.my-footer {
+	height: 50px; /*tamaño a lo alto*/
+	background-color: grey; /*color de fondo*/
+	display: flex; /*contenedor flex*/
+}
+
+.my-footer figure {
+	color: white; /*color del texto*/
+	margin-left: 20px; /*margen izquierdo*/
+	display: flex; /*contenedor flex*/
+	flex-direction: column; /*ordena los elementos uno arriba del otro*/
+	align-items: center; /*centra los elementos verticalmente*/
+	margin-top: 1px; /*margen superior*/
+	margin-right: 10px; /*margen derecho*/
+}
+
+footer img {
+	width: 30px; /*tamaño de la imagen*/
+}
+
+.informacion {
+	/*dentro del contenedor flex este elemento 
+ 	ocupara un mayor lugar con respecto a los otros elementos */
+	flex-grow: 1;
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	align-items: center; /*centra los elementos verticalmente*/
+}
+
+.informacion a {
+	color: red; /*color del texto*/
+	margin-right: 30px; /*margen derecho*/
+}
+
+/*---------------------------------FOOTER---------------------------------*/
+/*---------------------------------RESPONSIVE---------------------------------*/
+/*entre 577px y 768px*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+	.body-layout {
+		display: grid; /*contenedor grid*/
+		grid-template-columns: auto;
+		/*cuadricula 4filas x 1columnas*/
+		grid-template-areas:
+			"header"
+			"nav"
+			"aside"
+			"section"
+			"footer ";
+	}
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+	aside {
+		display: flex; /*contenedor flex*/
+		justify-content: center; /*centra los elementos horizontalmente*/
+		margin: 1rem; /*margen en las 4 direcciones*/
+	}
+	.my-aside {
+		width: 100%; /*ancho*/
+		display: flex; /*contenedor flex*/
+		flex-direction: column; /*alineo los elementos en columna(se invierten los ejes x e y)*/
+		border: none; /*saca los bordes*/
+		margin: 1rem; /*margen en las 4 direcciones*/
+	}
+	section {
+		margin: 1rem 1rem 2rem 1rem; /*margen en las 4 direcciones*/
+	}
+	.my-section {
+		width: 100%; /*ancho*/
+		display: flex; /*contenedor flex*/
+		/*alineo los elementos en columna(se invierten los ejes x e y, tambien 
+		se invierte el orden de los elementos)*/
+		flex-direction: column-reverse;
+	}
+	.gallery {
+		display: flex; /*contenedor flex*/
+		/*espacea los elementos manteniendo la misma distancia entre ellos y el margen*/
+		justify-content: space-evenly;
+	}
+	.gallery-element {
+		width: 40%; /*ancho*/
+	}
+	/*Aumento el tamaño y le coloco un borde 
+	cuando paso sobre el elemento con el mouse*/
+	.gallery-element:hover {
+		transform: scale(1.1);
+		border: 1px solid black;
+	}
+}
+/*menos 576px */
+@media only screen and (max-width: 576px) {
+	.body-layout {
+		display: grid; /*contenedor grid*/
+		grid-template-columns: 1fr;
+		/*cuadricula 4filas x 1columnas*/
+		grid-template-areas:
+			"header"
+			"nav"
+			"aside"
+			"section"
+			"footer ";
+	}
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+	.nav-menu-link {
+		font-size: 14px; /*cambio el tamaño de la fuente*/
+	}
+	aside {
+		display: flex; /*contenedor flex*/
+		margin: 1rem 1rem 2rem 1rem; /*margen en las 4 direcciones*/
+	}
+	.my-aside {
+		width: 100%; /*ancho*/
+		margin: 1rem; /*margen en las 4 direcciones*/
+		border: none; /*saco el borde*/
+	}
+	section {
+		display: flex; /*contenedor flex*/
+		margin: 1rem 1rem 2rem 1rem; /*margen en las 4 direcciones*/
+	}
+	.my-section {
+		width: 100%; /*ancho*/
+		display: flex; /*contenedor flex*/
+		/*alineo los elementos en columna(se invierten los ejes x e y, tambien 
+		se invierte el orden de los elementos)*/
+		flex-direction: column-reverse;
+	}
+
+	.gallery-element {
+		width: 100%; /*ancho*/
+	}
+	/*Aumento el tamaño y le coloco un borde 
+	cuando paso sobre el elemento con el mouse*/
+	.gallery-element:hover {
+		transform: scale(1.1);
+		border: 1px solid black;
+	}
+}
+/*---------------------------------RESPONSIVE---------------------------------*/

@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: max-content;
+	overflow: hidden;
+	background-image: url("../imagenes/wall.jpg");
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+}
+.containerText {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.textHome {
+	max-width: 30ch;
+	color: rgb(6, 6, 131);
+	font-size: 3rem;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bolder;
+	font-style: italic;
+	text-align: center;
+	text-shadow: 2px 0px red;
+}
+
+.textHome:hover {
+	color: red;
+	text-shadow: 2px 0px rgb(6, 6, 131);
+}

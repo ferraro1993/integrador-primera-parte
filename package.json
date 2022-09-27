@@ -1,0 +1,34 @@
+{
+	"name": "tienda-online",
+	"version": "1.0.0",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ferraro1993/integrador-primera-parte.git"
+	},
+	"author": "Alan Ferraro",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/"
+	},
+	"homepage": "https://github.com/",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"body-parser": "^1.20.0",
+		"dotenv": "^16.0.2",
+		"express": "^4.18.1",
+		"express-handlebars": "^6.0.6",
+		"express-session": "^1.17.3",
+		"express-validator": "^6.14.2",
+		"mongoose": "^6.6.0",
+		"multer": "^1.4.5-lts.1",
+		"nodemailer": "^6.7.8",
+		"nodemon": "^2.0.20"
+	},
+	"keywords": [],
+	"description": ""
+}

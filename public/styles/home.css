@@ -1,0 +1,227 @@
+/*---------------------------------GENERAL---------------------------------*/
+
+.body-layout {
+	display: grid; /*contenedor grid*/
+	height: 100vh;
+	/*tamaño de las columnas*/
+	grid-template-columns: 250px auto;
+	/*cuadricula 4filas x 2columnas*/
+	grid-template-areas:
+		"header header"
+		"nav nav"
+		"aside section"
+		"footer footer";
+}
+/*---------------------------------GENERAL---------------------------------*/
+
+/*---------------------------------ASIDE---------------------------------*/
+
+aside {
+	grid-area: aside; /*Asigno a que área corresponde este elemento*/
+	display: flex; /*contenedor flex*/
+	flex-direction: column; /*alineo los elementos en columna(se invierten los ejes x e y)*/
+}
+
+.bt-check {
+	display: none; /*saco(no muestro) el cuadrado que viene por defecto con el checkbox*/
+}
+.left-menu {
+	display: none; /*saco(no muestro) la imagen del menu*/
+	margin: 0.5rem; /*margen en las 4 direcciones*/
+}
+.left-menu img {
+	width: 60px; /*tamaño de la imagen*/
+}
+
+.aside-filtro {
+	width: 200px; /*ancho*/
+	background-color: white; /*color de fondo*/
+	border: 2px solid grey; /*borde de 2pixles*/
+	border-radius: 10px; /*curvo el borde*/
+	margin: 73px 1rem 0 1rem; /*margen en las 4 direcciones*/
+}
+
+.bt-check:checked ~ .aside-filtro {
+	left: 0;
+}
+
+.aside-filtro input {
+	margin-right: 10px; /*margen derecho*/
+}
+
+.filtro-check {
+	display: flex; /*contenedor flex*/
+	flex-direction: column; /*alineo los elementos en columna(se invierten los ejes x e y)*/
+	margin: 0 0 10px 1rem; /*margen en las 4 direcciones*/
+	font-size: 15px; /*tamaño de la fuente*/
+}
+
+.filtro-radio {
+	margin: 0 0 10px 1rem; /*margen en las 4 direcciones*/
+}
+
+.aside-title {
+	font-size: 25px; /*tamaño de la fuente*/
+	font-weight: bolder; /*negrita*/
+	text-align: center; /*centro el texto*/
+	padding-top: 20px; /*relleno superior*/
+	margin-bottom: 20px; /*margen inferior*/
+}
+.aside-category {
+	font-size: 20px; /*tamaño de la fuente*/
+	margin: 5px 0 10px 10px; /*margen en las 4 direcciones*/
+}
+
+/*creo una linea horizontal*/
+.h-line {
+	width: 100%; /*ancho*/
+	border-bottom: 1px solid black; /*creo un borde a la izquierda*/
+	margin-bottom: 4px; /*coloco un margen debajo del elemento*/
+}
+
+.btn {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	margin: 1rem 1rem 0 1rem; /*margen en las 4 direcciones*/
+	cursor: pointer; /*para que aparesca el curso sobre el elemnto*/
+	padding-bottom: 1rem; /*relleno inferior*/
+}
+.btn input {
+	width: 130px; /*ancho*/
+	height: 30px; /*alto*/
+	font-size: 1rem; /*tamaño de laa fuente*/
+	font-weight: bold; /*negrita*/
+	background-color: cyan; /*color del fondo*/
+	border: 2px solid gray; /*borde de 2 pixeles*/
+	box-shadow: 0px 2px 3px black; /*borde con sombras*/
+	border-radius: 5px; /*Curvo los bordes*/
+}
+.btn input:hover {
+	background-color: silver; /*color del fondo*/
+}
+/*---------------------------------ASIDE---------------------------------*/
+/*---------------------------------SECTION---------------------------------*/
+section {
+	grid-area: section; /*Asigno a que área corresponde este elemento*/
+	margin: 1rem 1rem; /*margen*/
+}
+
+.my-section {
+	display: flex; /*contenedor flex*/
+	flex-direction: column; /*alineo los lementos en columna(se invierten los ejes x e y)*/
+	align-items: center; /*centro los elementos horizontalmente */
+}
+.section-title {
+	font-size: 2rem; /*tamaño de la fuente*/
+	font-weight: bolder; /*letra en negrita o bolder*/
+	text-align: center; /*centro el texto*/
+	margin-bottom: 20px; /*magenr inferior*/
+}
+.list-producto {
+	width: 100%;
+	display: grid; /*contenedor grid*/
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-rows: minmax(auto, 1fr);
+	justify-items: center;
+	/*grid-template-columns: repeat(4, 1fr); /*cuatro columnas de una fraccion c/u*/
+	/*grid-template-rows: auto; /*filas*/
+	gap: 1rem; /*genero espacio vertical y horizontal*/
+}
+.producto {
+	width: 250px; /*ancho*/
+	height: 350px; /*alto*/
+	display: flex; /*contenedor flex*/
+	flex-direction: column; /*alineo los lementos en columna(se invierten los ejes x e y)*/
+	justify-content: flex-end; /*alineo los lementos verticalmente.iniciando desde el final del eje */
+	align-items: center; /*centro los elementos horizontalmente */
+	background-color: white; /*color del fondo*/
+	border: 2px solid grey; /*borde de 2 pixeles gris*/
+	border-radius: 10px; /*Curvo los bordes*/
+}
+
+.producto img {
+	width: 200px; /*tamaño de la imagen*/
+}
+
+.product-title {
+	font-weight: normal; /*le saco la negrita*/
+	font-size: 1rem; /*tamaño de fuente*/
+	font-family: Cambria; /*tipo de fuente*/
+	color: black; /*color del texto*/
+}
+
+.producto span {
+	color: brown; /*color del texto*/
+	font-style: italic; /*cursiva*/
+	font-weight: bolder; /*negrita*/
+	font-size: 1.75rem; /*tamaño de fuente*/
+	margin-top: 10px; /*margen superior*/
+}
+.producto a {
+	font-size: 1rem; /*tamaño de fuente*/
+	font-weight: bolder; /*negrita*/
+	letter-spacing: 1px; /*espacio entre letras*/
+	color: white; /*color del texto*/
+	background-color: rgb(12, 161, 166); /*color del fondo*/
+	text-decoration: none; /*saco la decoracion del hipervínculo*/
+	box-shadow: 0px 2px 3px black;
+	border-radius: 5px; /*curvo los bordes*/
+	padding: 10px 40px; /*relleno*/
+	margin: 10px 10px; /*margen*/
+}
+.producto a:hover {
+	background-color: grey; /*color del fondo*/
+}
+
+/*---------------------------------SECTION---------------------------------*/
+
+/*---------------------------------RESPONSIVE---------------------------------*/
+/*entre 577px y 768px*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+}
+/*menos 576px */
+@media only screen and (max-width: 576px) {
+	.body-layout {
+		/*cuadricula 4filas x 1columnas*/
+		grid-template-columns: auto;
+		grid-template-rows: auto auto 60px auto auto;
+		grid-template-areas:
+			"header"
+			"nav"
+			"aside"
+			"section"
+			"footer";
+	}
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+
+	.nav-menu-link {
+		font-size: 14px; /*cambio el tamaño de la fuente*/
+	}
+
+	.aside-filtro {
+		background-color: rgba(128, 128, 128, 0.904);
+		border: 2px solid black;
+		border-radius: 10px;
+		/*especifica cómo el elemento es posicionado en el documento*/
+		position: absolute;
+		top: 55%; /*posicionado respeto de la parte superior del documento*/
+		left: -100%; /*posicionado respeto de la parte izquierda del documento*/
+		transition: 1s; /*tiempo que tarda en completarse la transicion*/
+	}
+
+	.left-menu {
+		display: inline;
+		margin: 0.5rem; /*margen*/
+	}
+	.btn input {
+		border: 2px solid black; /*borde de 2 pixeles*/
+	}
+}
+/*---------------------------------RESPONSIVE---------------------------------*/

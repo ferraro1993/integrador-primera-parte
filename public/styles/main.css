@@ -1,0 +1,244 @@
+/*---------------------------------GENERAL---------------------------------*/
+* {
+	margin: 0; /*reseteo los margenes*/
+	padding: 0; /*reseteo relleno*/
+	/* hace que el padding y el border pasen a formar parte del
+	 cálculo del ancho de la caja y no lo suman posteriormente.*/
+	box-sizing: border-box;
+}
+
+/*Asegura  que estos elementos se interpreten como elementos Block en todos
+los navegadores (mejora la compatibilidad con navegadores antiguos).
+*/
+header,
+section,
+main,
+footer,
+aside,
+nav,
+article,
+figure,
+figcaption {
+	display: block;
+}
+
+body {
+	font-family: sans-serif, Arial, Helvetica;
+	background-color: silver;
+	min-height: 100vh;
+}
+
+/*---------------------------------GENERAL---------------------------------*/
+/*---------------------------------HEADER---------------------------------*/
+header {
+	grid-area: header; /*Asigno a que área corresponde este elemento*/
+	background-color: rgb(12, 161, 166); /*color del fondo*/
+	display: grid; /*contenedor grid*/
+	grid-template-columns: repeat(3, 1fr); /*creo 3 columnas de 1fr c/u*/
+	row-gap: 1rem; /*espacio entre filas*/
+	padding-bottom: 5px;
+}
+.header-logo {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.logo-text {
+	font-size: 2em; /*tamaño de la fuetne */
+	font-weight: bolder; /*negrita*/
+}
+.logo-img {
+	width: 130px; /*tamaño de la imagen*/
+}
+.header-container-right {
+	display: flex; /*contenedor flex*/
+	justify-content: space-evenly; /*espacea los elementos manteniendo la misma distancia entre ellos y el margen*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.header-search {
+	display: flex; /*contenedor flex*/
+	align-items: center; /*centro los elementos verticalmente*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+}
+
+.header-search input {
+	width: 400px; /*ancho*/
+	height: 40px; /*alto*/
+	border: 3px solid silver; /*borde de 3px plateado*/
+	border-right: none; /*saco el borde derecho*/
+	font-size: 20px; /*tamaño de la fuente*/
+	border-top-left-radius: 20px; /*hago curvo el borde superior izquierdo */
+	border-bottom-left-radius: 20px; /*hago curvo el inferior  derecho */
+}
+
+.header-search button {
+	width: 50px; /*ancho*/
+	height: 40px; /*alto*/
+	border: 3px solid silver; /*borde de 3px plateado*/
+	border-top-right-radius: 20px; /*hago curvo el borde superior derecho */
+	border-bottom-right-radius: 20px; /*hago curvo el inferior  derecho */
+}
+/*cambia el color al pasar el mouse por el elemento*/
+.header-search button:hover {
+	background-color: cyan; /*color del fondo*/
+}
+
+.header-search img {
+	width: 30px; /*ancho de la imagen*/
+	height: 29px; /*alto de la imagen*/
+}
+
+.header-login {
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centro los elementos horizontalmente*/
+	align-items: center; /*centro los elementos verticalmente*/
+}
+.header-login img {
+	width: 70px; /*tamaño de la imagen*/
+	margin-right: 5px;
+}
+.header-login a {
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+}
+
+/*cambia el color al pasar el mouse por el elemento*/
+.header-login a:hover {
+	color: cyan;
+}
+.loged {
+	position: relative;
+}
+.loged p {
+	text-decoration: none;
+	font-size: 20px;
+	color: rgb(5, 77, 172);
+	font-style: italic;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	font-weight: bolder;
+}
+.loged:hover p {
+	color: rgb(5, 77, 172);
+	transform: scale(1.2);
+	transition: all 0.4s;
+}
+
+/*cambia el color al pasar el mouse por el elemento*/
+.loged:hover .subMenuLoged {
+	visibility: visible; /*muestra el elemnto*/
+}
+
+.subMenuLoged {
+	width: max-content;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	border: 1px solid black;
+	list-style-type: none;
+	display: block;
+	position: absolute;
+	visibility: hidden;
+}
+.subMenuLoged a {
+	font-size: 1rem;
+	font-style: italic;
+	font-weight: bold;
+}
+.subMenuLoged li {
+	border-radius: 5px;
+	margin: 5px;
+	padding: 2px 5px;
+}
+.subMenuLoged li:hover {
+	background-color: rgba(0, 255, 255, 0.493);
+	border: 1px solid silver;
+	transition: all 0.2s;
+}
+.header-carrito {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header-carrito img {
+	width: 70px;
+	border-radius: 50%;
+}
+
+.header-carrito :hover {
+	transform: scale(1.2);
+	transition: all 0.4s;
+}
+/*---------------------------------HEADER---------------------------------*/
+/*---------------------------------NAV---------------------------------*/
+nav {
+	grid-area: nav;
+	background-color: grey;
+}
+.nav-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+}
+.nav-menu-item {
+	margin: 10px 30px;
+	padding: 5px 5px 5px 5px;
+}
+.nav-menu-link {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	font-family: monospace;
+	text-transform: uppercase;
+	width: max-content;
+}
+
+.nav-menu-item:hover {
+	background-color: cyan;
+	box-shadow: inset 0 0 1px 1px black;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*---------------------------------NAV---------------------------------*/
+
+/*---------------------------------FOOTER----------------------------------*/
+footer {
+	grid-area: footer;
+	height: 50px;
+	width: 100%;
+}
+
+.my-footer {
+	width: 100%;
+	height: 50px;
+	background-color: grey;
+	display: flex;
+}
+
+.my-footer figure {
+	color: white;
+	margin: 0 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+footer img {
+	width: 25px;
+}
+
+.informacion {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.informacion a {
+	color: red;
+	margin-right: 30px;
+}
+/*---------------------------------FOOTER---------------------------------*/

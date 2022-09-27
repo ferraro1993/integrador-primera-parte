@@ -1,0 +1,111 @@
+/*---------------------------------GENERAL---------------------------------*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css");
+.fa-check-circle {
+	color: green;
+}
+.fa-exclamation-circle {
+	color: brown;
+}
+
+.body-layout {
+	display: grid; /*contenedor grid*/
+	height: 100vh;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto 1fr auto;
+	/*cuadricula 4filas x 1columnas*/
+	grid-template-areas:
+		"header"
+		"nav"
+		"main"
+		"footer";
+}
+/*---------------------------------GENERAL---------------------------------*/
+/*---------------------------------MAIN---------------------------------*/
+main {
+	width: 100%; /*100% del ancho*/
+	margin-top: 30px; /*margen superior*/
+	margin-bottom: 30px; /*margen inferior*/
+	display: flex; /*contenedor flex*/
+	justify-content: center; /*centra los elementos horizontalmente*/
+	margin: 5rem 0; /*margen en las 4 direcciones*/
+}
+
+.form-login {
+	width: 400px; /*ancho*/
+	color: black; /*color del texto*/
+	background-color: grey; /*#2b6b9b;*/ /*color del fondo*/
+	box-shadow: 7px 13px 37px black; /*borde sombreado*/
+	border-top: 4px solid rgb(12, 161, 166); /*rgb(10, 179, 179);*/ /*agrego un borde superior*/
+	border-radius: 10px; /*curvo los bordes*/
+	padding: 20px 30px; /*relleno en las 4 direcciones*/
+	margin: 18px; /*margen en las 4 direcciones*/
+}
+.form-login h5 {
+	height: 40px; /*alto*/
+	font-size: 20px; /*tamaño de la fuente*/
+	text-align: center; /*centro el texto*/
+	margin: 0 0 30px 0; /*margen en las 4 direcciones*/
+	border-bottom: 1px solid; /*agrego un borde inferior*/
+}
+
+.formControls {
+	display: flex;
+	background-color: silver; /*color del fondo*/
+	border: 1px solid rgb(12, 161, 166); /*borde de un pixel de grosor*/
+	border-radius: 10px; /*curvo los bordes*/
+	margin-bottom: 15px; /*margin inferior*/
+	padding: 11px 10px; /*relleno*/
+}
+.formControls:focus-within {
+	box-shadow: 0px 0px 5px 1px blue;
+}
+.formControls input {
+	width: 100%; /*ancho*/
+	font-size: 14px; /*tamaño de la fuente*/
+	font-weight: bold; /*negrita*/
+	font-family: Arial, Helvetica, sans-serif; /*tipo de fuente*/
+	color: gray; /*color del texto*/
+	background-color: silver; /*color del fondo*/
+	border-style: none;
+	outline: 0;
+}
+.validationErrors {
+	color: brown;
+	margin-bottom: 5px;
+}
+.button {
+	width: 100%; /*ancho*/
+	height: 40px; /*alto*/
+	color: black; /*color de texto*/
+	background-color: rgb(12, 161, 166); /*color del fondo*/
+	font-size: 1rem; /*tamaño de la fuente*/
+	font-weight: bold; /*negretia*/
+	border: none; /*saco los bordes*/
+	margin-bottom: 16px; /*margen inferior*/
+	border-radius: 10px; /*curvo el borde*/
+}
+
+.button:hover {
+	box-shadow: 0 0 2px 3px cyan; /*borde con sompra */
+}
+
+/*---------------------------------MAIN---------------------------------*/
+/*---------------------------------RESPONSIVE---------------------------------*/
+/*entre 577px y 768px*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+}
+/*menos 576px */
+@media only screen and (max-width: 576px) {
+	/*hago que los elementos del header se ponga uno abajo del otro (en una columna)*/
+	header {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+	.nav-menu-link {
+		font-size: 14px; /*cambio el tamaño de la fuente*/
+	}
+}
+/*---------------------------------RESPONSIVE---------------------------------*/
