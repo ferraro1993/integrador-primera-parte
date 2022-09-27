@@ -1,0 +1,92 @@
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles/main.css" type="text/css" />
+
+		{{{_sections.head}}}
+
+		<title>GPIO</title>
+		<link rel="icon" href="/imagenes/favicon-gpio.png" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div class="body-layout">
+
+			<header>
+				<div class="header-logo">
+					<img class="logo-img" src="/imagenes/logo-gpio.png" alt="Logo gpio" />
+					<h3 class="logo-text">Tienda GPIO Online</h3>
+				</div>
+
+				<form class="header-search" action="">
+					<p><input type="search" placeholder="	Buscar.." name="busqueda" /></p>
+					<button>
+						<img class="ImagenTitulo" src="/imagenes/lupa.png" alt="lupa de busqueda" />
+					</button>
+				</form>
+				<div class="header-container-right">
+					<div class="header-login">
+						<img src="/imagenes/user.png" alt="usuario" />
+						{{#if user}}
+							<div class="loged">
+								<p>{{user}}</p>
+								<ul class="subMenuLoged">
+									<li><a href="/users/account">Cuenta</a></li>
+									<li><a href="/products/listProducts">Administrador</a></li>
+									<li><a href="/users/logout">Logout</a></li>
+								</ul>
+							</div>
+						{{else}}
+							<a href="/users/login">Ingresar</a>
+
+						{{/if}}
+					</div>
+					<div class="header-carrito">
+						<a href="/cart"><img src="/imagenes/carrito.png" alt="carrito de compras" /></a>
+					</div>
+				</div>
+			</header>
+
+			<nav>
+				<ul class="nav-menu">
+					<li class="nav-menu-item">
+						<a class="nav-menu-link" href="/">Placas De Desarrollo</a>
+					</li>
+					<li class="nav-menu-item"><a class="nav-menu-link" href="#">modulos y sensores</a></li>
+					<li class="nav-menu-item">
+						<a class="nav-menu-link" href="#">Componentes Electronicos</a>
+					</li>
+				</ul>
+			</nav>
+
+			{{{body}}}
+
+			<footer>
+				<div class="my-footer">
+					<figure>
+						<img src="/imagenes/copyright.png" alt="copyright" />
+						<figcaption>copyright</figcaption>
+					</figure>
+					<div class="informacion">
+
+						<a href="https://es.wikipedia.org/wiki/Derecho_de_autor" target="_blank">
+							Derecho De Autor</a>
+
+						<a
+							href="https://es.wikipedia.org/wiki/Pol%C3%ADtica_de_privacidad"
+							target="_blank"
+						>Política De Privacidad</a>
+
+						<a
+							href="https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)"
+							target="_blank"
+						>Cookie</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

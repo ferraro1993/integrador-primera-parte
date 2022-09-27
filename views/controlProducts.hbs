@@ -1,0 +1,86 @@
+{{#section "head"}}
+	<link rel="stylesheet" href="/styles/controlProducts.css" type="text/css" />
+
+{{/section}}
+<main>
+	<section>
+		<form class="form" action="/products/addProducts" method="POST" enctype="multipart/form-data">
+			<h5>Agregué un producto nuevo</h5>
+			<div class="formLayout">
+				<div class="formControls">
+					<input type="file" id="image" name="image" value="" required />
+				</div>
+				<div class="formControls">
+					<input type="text" id="name" value="" name="name" placeholder="Nombre" required />
+				</div>
+				<div class="formControls">
+					<input type="number" id="price" name="price" value="" placeholder="Precio" required />
+				</div>
+
+				<div>
+					<button class="button" type="submit">Agregar</button>
+				</div>
+			</div>
+		</form>
+	</section>
+
+	<section>
+		<div class="form">
+			<h5>Edite o elimine un producto</h5>
+			<div class="listForm">
+				{{#each items}}
+					<form
+						class="formItem"
+						action="/products/editProducts/"
+						method="POST"
+						enctype="multipart/form-data"
+						id="formItem_{{@index}}"
+					>
+						<div class="formLayout">
+							<input type="text" value="{{@index}}" name="position" hidden="true" />
+							{{#toStringBase64 image}}
+								<img src="data:{{image.contentType}};base64,{{this}}" />
+							{{/toStringBase64}}
+							<div class="formControls">
+								<input type="file" name="image" value="" />
+							</div>
+							<div class="formControls">
+								<input type="text" value="{{name}}" name="name" placeholder="Nombre" required />
+							</div>
+							<div class="formControls">
+								<input
+									class="inputPrice"
+									type="number"
+									name="price"
+									value="{{price}}"
+									placeholder="Precio"
+									required
+								/>
+
+							</div>
+							<button class="button" type="submit">Editar</button>
+							<button
+								type="button"
+								class="button buttonDelete"
+								id="btnDelete_{{@index}}"
+								value="{{@index}}"
+							>Eliminar</button>
+
+						</div>
+					</form>
+
+				{{/each}}
+			</div>
+		</div>
+	</section>
+	<div id="popupContainer" class="popupContainer">
+		<div class="popup">
+			<p>¿Esta seguro que quiere borrar este Producto?</p>
+			<div class="btnContainer">
+				<button id="btnCancel" class="btn">Cancelar</button>
+				<button id="btnConfirmDelete" class="btn">Borrar</button>
+			</div>
+		</div>
+	</div>
+</main>
+<script src="/script/product.js"></script>

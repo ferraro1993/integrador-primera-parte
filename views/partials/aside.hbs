@@ -1,0 +1,77 @@
+<!--....................................ASIDE.......................................-->
+<aside>
+	<input type="checkbox" class="bt-check" id="check" />
+	<label class="left-menu" for="check"><img src="./imagenes/aside-icon.png" alt="menu" /></label>
+
+	<div class="aside-filtro">
+		<p class="aside-title">Filtrar por</p>
+		<form name="filtro" method="" action="">
+			<p class="aside-category">Placas</p>
+			<div class="filtro-check">
+				<label for="Arduino"><input
+						type="checkbox"
+						id="Arduino"
+						name="Placa"
+						value="Arduino"
+					/>Arduino</label>
+
+				<label for="Esp"><input type="checkbox" id="Esp" name="Placa" value="Esp" />Esp</label>
+
+				<label for="raspberry_pi"><input
+						type="checkbox"
+						id="raspberry_pi"
+						name="Placa"
+						value="raspberry_pi"
+					/>Raspberry Pi</label>
+			</div>
+			<div class="h-line"></div>
+
+			<p class="aside-category">Con wifi</p>
+			<div class="filtro-radio">
+				<div>
+					<input type="radio" id="no" name="wifi" value="no" />
+					<label for="no">NO</label>
+				</div>
+				<div>
+					<input type="radio" id="si" name="wifi" value="si" />
+					<label for="si">SI</label>
+				</div>
+				<div>
+					<input type="radio" id="ambos" name="wifi" value="ambos" />
+					<label for="ambos">Ambos</label>
+				</div>
+			</div>
+
+			<div class="h-line"></div>
+
+			<p class="aside-category">Precios</p>
+			<div class="filtro-radio">
+				<div>
+					<input type="radio" id="pre1" name="Precio" value="1000" />
+					<label for="pre1">menos de 1000</label>
+				</div>
+				<div>
+					<input type="radio" id="pre2" name="Precio" value="3000" />
+					<label for="pre2">1000 - 3000</label>
+				</div>
+				<div>
+					<input type="radio" id="pre3" name="Precio" value="5000" />
+					<label for="pre3">3000 - 5000</label>
+				</div>
+				<div>
+					<input type="radio" id="pre4" name="Precio" value="30000" />
+					<label for="pre4">5000 - 30000</label>
+				</div>
+				<div>
+					<input type="radio" id="pre5" name="Precio" value="40000" />
+					<label for="pre5">mas de 30000</label>
+				</div>
+			</div>
+			<div class="h-line"></div>
+			<div class="btn">
+				<input type="submit" value="Filtrar" />
+			</div>
+		</form>
+	</div>
+</aside>
+<!--....................................ASIDE.......................................-->

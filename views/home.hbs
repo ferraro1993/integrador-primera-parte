@@ -1,0 +1,24 @@
+{{#section "head"}}
+	<link rel="stylesheet" href="/styles/home.css" type="text/css" />
+{{/section}}
+{{>aside}}
+<!--....................................SECTION.......................................-->
+<section>
+	<div class="my-section">
+		<h5 class="section-title">Placas De Desarrollo</h5>
+		<div class="list-producto">
+			{{#each items}}
+				<article class="producto">
+					{{#toStringBase64 image}}
+						<img src="data:{{image.contentType}};base64,{{this}}" />
+						{{/toStringBase64}}
+						<h1 class="product-title">{{name}}</h1>
+						<span>${{price}}</span>
+						<a href="/producto">Ver Producto</a>
+				</article>
+			{{/each}}
+		
+		</div>
+	</div>
+</section>
+<!--....................................SECTION.......................................-->

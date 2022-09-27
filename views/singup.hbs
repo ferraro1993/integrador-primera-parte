@@ -1,0 +1,147 @@
+{{#section "head"}}
+	<link rel="stylesheet" href="/styles/singup.css" type="text/css" />
+{{/section}}
+<!--....................................MAIN.......................................-->
+<main>
+
+	<section class="form-login">
+		<h5>Registrate</h5>
+		<form id="formSingup" action="/users/singup" method="POST">
+			<div class="formControls">
+				<input
+					class="controls"
+					type="text"
+					name="name"
+					value="{{formData.name}}"
+					placeholder="Nombre"
+					autofocus
+				/>
+				{{#ifContain arrWarnings "name" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+
+			</div>
+			{{#filter arrWarnings "name"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="text"
+					name="lastName"
+					value="{{formData.lastName}}"
+					placeholder="Apellido"
+				/>
+				{{#ifContain arrWarnings "lastName" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "lastName"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="date"
+					name="dateOfBirth"
+					value="{{formData.dateOfBirth}}"
+					placeholder="Fecha de nacimiento"
+				/>
+				{{#ifContain arrWarnings "dateOfBirth" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "dateOfBirth"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="email"
+					name="email"
+					value="{{formData.email}}"
+					placeholder="e-mail"
+				/>
+				{{#ifContain arrWarnings "email" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "email"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="tel"
+					name="phone"
+					value="{{formData.phone}}"
+					placeholder="Telefono"
+				/>
+
+				{{#ifContain arrWarnings "phone" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "phone"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="text"
+					name="address"
+					value="{{formData.address}}"
+					placeholder="Direccion"
+				/>
+				{{#ifContain arrWarnings "address" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "address"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="text"
+					name="user"
+					value="{{formData.user}}"
+					placeholder="Usuario"
+				/>
+				{{#ifContain arrWarnings "user" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "user"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input class="controls" type="password" name="pass" value="" placeholder="Contraseña" />
+				{{#ifContain arrWarnings "pass" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "pass"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<div class="formControls">
+				<input
+					class="controls"
+					type="password"
+					name="confirmPass"
+					value=""
+					placeholder="Confime su contraseña"
+				/>
+				{{#ifContain arrWarnings "confirmPass" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+					<i class="{{this}}"></i>
+				{{/ifContain}}
+			</div>
+			{{#filter arrWarnings "confirmPass"}}
+				<p class="validationErrors">{{msg}}</p>
+			{{/filter}}
+			<input class="button" type="submit" name="" value="Enviar" />
+		</form>
+
+	</section>
+</main>
+<!--....................................MAIN.......................................-->

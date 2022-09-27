@@ -1,0 +1,235 @@
+{{#section "head"}}
+	<link rel="stylesheet" href="/styles/account.css" type="text/css" />
+{{/section}}
+<!--....................................MAIN.......................................-->
+<main>
+	<section>
+
+		<div class="form-login">
+			<form id="formAcount" action="/users/account" method="POST">
+				<fieldset>
+					<legend>Actualiza tus datos</legend>
+					<label class="labelStyle" for="name">Nombre</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="text"
+							id="name"
+							name="name"
+							value="{{formData.name}}"
+							placeholder="Nombre"
+							autofocus
+						/>
+						{{#ifContain arrWarnings "name" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+
+					</div>
+					{{#filter arrWarnings "name"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<label class="labelStyle" for="lastName">Apellido</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="text"
+							id="lastName"
+							name="lastName"
+							value="{{formData.lastName}}"
+							placeholder="Apellido"
+						/>
+						{{#ifContain arrWarnings "lastName" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarnings "lastName"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<label class="labelStyle" for="dateOfBirth">Fecha de nacimiento</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="date"
+							id="dateOfBirth"
+							name="dateOfBirth"
+							value="{{formData.dateOfBirth}}"
+							placeholder="Fecha de nacimiento"
+						/>
+						{{#ifContain
+							arrWarnings
+							"dateOfBirth"
+							"fas fa-check-circle"
+							"fas fa-exclamation-circle"
+						}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarnings "dateOfBirth"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<label class="labelStyle" for="email">e-mail</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="email"
+							id="email"
+							name="email"
+							value="{{formData.email}}"
+							placeholder="e-mail"
+						/>
+						{{#ifContain arrWarnings "email" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarnings "email"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<label class="labelStyle" for="phone">Telefono</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="tel"
+							id="phone"
+							name="phone"
+							value="{{formData.phone}}"
+							placeholder="Telefono"
+						/>
+
+						{{#ifContain arrWarnings "phone" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarnings "phone"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<label class="labelStyle" for="address">Direccion</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="text"
+							id="address"
+							name="address"
+							value="{{formData.address}}"
+							placeholder="Direccion"
+						/>
+						{{#ifContain arrWarnings "address" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarnings "address"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<label class="labelStyle" for="user">Usuario</label>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="text"
+							id="user"
+							name="user"
+							value="{{formData.user}}"
+							placeholder="Usuario"
+						/>
+						{{#ifContain arrWarnings "user" "fas fa-check-circle" "fas fa-exclamation-circle"}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarnings "user"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<input class="button" type="submit" name="" value="Actualizar" />
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	<section>
+		<div class="form-login">
+			<form id="formAcountPass" action="/users/accountPass" method="POST">
+				<fieldset>
+					<legend>Cambia tu contraseña</legend>
+					<div class="formControls">
+						<input
+							class="controls"
+							type="password"
+							name="oldPass"
+							value=""
+							placeholder="Contraseña anterior"
+						/>
+						{{#ifContain
+							arrWarningsPass
+							"oldPass"
+							"fas fa-check-circle"
+							"fas fa-exclamation-circle"
+						}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarningsPass "oldPass"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+
+					<div class="formControls">
+						<input
+							class="controls"
+							type="password"
+							name="password"
+							value=""
+							placeholder="Contraseña nueva"
+						/>
+						{{#ifContain
+							arrWarningsPass
+							"password"
+							"fas fa-check-circle"
+							"fas fa-exclamation-circle"
+						}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarningsPass "password"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+
+					<div class="formControls">
+						<input
+							class="controls"
+							type="password"
+							name="newConfirmPass"
+							value=""
+							placeholder="Confime la contraseña nueva"
+						/>
+						{{#ifContain
+							arrWarningsPass
+							"newConfirmPass"
+							"fas fa-check-circle"
+							"fas fa-exclamation-circle"
+						}}
+							<i class="{{this}}"></i>
+						{{/ifContain}}
+					</div>
+					{{#filter arrWarningsPass "newConfirmPass"}}
+						<p class="validationErrors">{{msg}}</p>
+					{{/filter}}
+					<input class="button" type="submit" name="" value="Cambiar" />
+				</fieldset>
+			</form>
+		</div>
+		<div class="containerDelete">
+			<fieldset>
+				<legend>Borrar cuenta</legend>
+				<button id="btnDelete" class="buttonDelete">Borrar</button>
+			</fieldset>
+		</div>
+	</section>
+
+	<div id="popupContainer" class="popupContainer">
+		<div class="popup">
+			<p>¿Esta seguro que quiere borrar esta cuenta?</p>
+			<div class="btnContainer">
+				<button id="btnCancel" class="btn">Cancelar</button>
+				<a id="btnConfirmDelete" class="btn" href="/users/deleteAccount">Borrar</a>
+			</div>
+		</div>
+	</div>
+
+</main>
+<script src="/script/account.js"></script>
+<!--....................................MAIN.......................................-->
