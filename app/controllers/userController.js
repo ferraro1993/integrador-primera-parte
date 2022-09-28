@@ -55,11 +55,20 @@ async function sendSingupForm(req, res, next) {
 				message: "Su cuenta a sido creada exitosamente, ir a la página de inicio sesión.",
 			});
 		} else {
-			let obj = [
-				{ param: "user", msg: "*Este usuario ya se encuentra registrado, intente con otro" },
-			];
-			const formData = req.body;
-			res.render("singup", { arrWarnings: obj, formData });
+			if ((err.codeName = "DuplicateKey")) {
+				console.log(err);
+				let obj = [
+					{ param: "user", msg: "*Este usuario ya se encuentra registrado, intente con otro" },
+				];
+				const formData = req.body;
+				res.render("singup", { arrWarnings: obj, formData });
+			} else {
+				res.render("info", {
+					layout: "infoPage.hbs",
+					link: "users/account",
+					message: `Error: ${err.codeName}, volver a la página cuenta.`,
+				});
+			}
 		}
 	});
 }
