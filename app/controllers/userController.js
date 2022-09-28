@@ -56,7 +56,6 @@ async function sendSingupForm(req, res, next) {
 			});
 		} else {
 			if ((err.codeName = "DuplicateKey")) {
-				console.log(err);
 				let obj = [
 					{ param: "user", msg: "*Este usuario ya se encuentra registrado, intente con otro" },
 				];
